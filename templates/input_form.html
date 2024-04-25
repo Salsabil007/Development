@@ -1,0 +1,19 @@
+<!-- input_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="input_string">Enter a string:</label>
+        <input type="text" id="input_string" name="input_string">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

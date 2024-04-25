@@ -9,3 +9,22 @@ class AboutPageView(TemplateView):
 class FdaProjectView(TemplateView):
     template_name = "proj_fda.html"
 
+# views.py
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def input_view(request):
+    if request.method == 'POST':
+        # Get the input value from the form
+        input_string = request.POST.get('input_string', '')
+        
+        # Process the input_string (e.g., perform some operation on it)
+        # For demonstration purposes, let's just return the reversed string
+        reversed_string = input_string[::-1]
+        
+        # Render the template with the reversed_string
+        return render(request, 'result.html', {'reversed_string': reversed_string})
+    
+    # If the request method is GET, render the template with an empty string
+    return render(request, 'input_form.html')
